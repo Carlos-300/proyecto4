@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -17,18 +16,88 @@
     <link rel="stylesheet" href="{% static 'style/styles.css' %}">
     <title>Document</title>
 
+
+    <script type="text/javascript">
+        var xInic, yInic;
+        var estaPulsado = false;
+        
+        function ratonPulsado(evt) { 
+            //Obtener la posición de inicio
+            xInic = evt.clientX;
+            yInic = evt.clientY;    
+            estaPulsado = true;
+            //Para Internet Explorer: Contenido no seleccionable
+            document.getElementById("cuadro").unselectable = true;
+        }
+        
+        function ratonMovido(evt) {
+            if(estaPulsado) {
+                //Calcular la diferencia de posición
+                var xActual = evt.clientX;
+                var yActual = evt.clientY;    
+                var xInc = xActual-xInic;
+                var yInc = yActual-yInic;
+                xInic = xActual;
+                yInic = yActual;
+                
+                //Establecer la nueva posición
+                var elemento = document.getElementById("cuadro");
+                var position = getPosicion(elemento);
+                elemento.style.top = (position[0] + yInc) + "px";
+                elemento.style.left = (position[1] + xInc) + "px";
+            }
+        }
+        
+        function ratonSoltado(evt) {
+            estaPulsado = false;
+        }
+        
+        /*
+         * Función para obtener la posición en la que se encuentra el
+         * elemento indicado como parámetro.
+         * Retorna un array con las coordenadas x e y de la posición
+         */
+        function getPosicion(elemento) {
+            var posicion = new Array(2);
+            if(document.defaultView && document.defaultView.getComputedStyle) {
+                posicion[0] = parseInt(document.defaultView.getComputedStyle(elemento, null).getPropertyValue("top"))
+                posicion[1] = parseInt(document.defaultView.getComputedStyle(elemento, null).getPropertyValue("left"));
+            } else {
+                //Para Internet Explorer
+                posicion[0] = parseInt(elemento.currentStyle.top);             
+                posicion[1] = parseInt(elemento.currentStyle.left);               
+            }      
+            return posicion;
+        
+        }
+
+
+    </script>
+
+
+
 </head>
 
 
 
-
-<nav class="navbar text-center" style="background-color: #e3f2fd; text-align: center;">
-    <!-- Navbar content -->
-    <ul>
-        <li><a class="nav-link active" aria-current="page" href="/index">Edit/PDF</a></li>
-        <li><a class="nav-link disabled">Disabled</a></li>
-    </ul>
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-ms">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-togglr="collapse" data-target="#navbarTogglerDemo1" aria-controls="navbarTogglerDemo1" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navar-toggler-icon"></span>
+</button>
+    <a class="navbar-brand" href="">
+        <img src="{% static 'img/logo_ASP.png' %}" alt="logo" width="50" height="50" class="d-inline-block aling-center ">
+        Aguas San Pedro
+    </a>
+    <div class=" collapse navbar-collapse" id="navbarTogglerDemo01">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" href="">Inicio</a>
+        <a class="nav-item nav-link" href="">etc</a>
+        <a class="nav-item nav-link" href="">Inicio</a>
+    </div>
+    </div>
 </nav>
+
+
 
 
 {% block content %}
