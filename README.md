@@ -1,3 +1,0 @@
-# proyecto4hol
-
-gdsg

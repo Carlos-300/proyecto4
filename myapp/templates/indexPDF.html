@@ -4,115 +4,25 @@
 <!---->
 
 <body>
+  <script>
+    $(function () {
+      $('#btn_carpeta_pdf').hide();
+      $('#nav-home-tab').click(function () {
+        $('#btn_unir_pdf').show();
+        $('#btn_carpeta_pdf').hide();
+
+      });
+      $('#nav-profile-tab').click(function () {
+        $('#btn_unir_pdf').hide();
+        $('#btn_carpeta_pdf').show();
+
+      });
+    })
+  </script>
 
 
-  <div class="container text-center">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-      <div class="col mb-3">
-        <!--Card Unir PDFS-->
-        <div class="card">
-          <img src="{% static 'img/unirPDF2.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Unir PDFs</h3>
-            <p class="card-text">Junta 2 o mas PDFs en uno solo documento...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana1">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card Dividir PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/dividirPDF3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Divide PDFs</h3>
-            <p class="card-text">Divide tu PDF en distintos documentos por cantidad de páginas</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana2">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card Girar PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/GirarPDF4v3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Girar hojas PDFs</h3>
-            <p class="card-text"> Gira cualquier hoja del documento...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana3">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card Girar PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/montarPDF5v2.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Montar hojas PDFs</h3>
-            <p class="card-text">Montar una hoja sobre otra..</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana4">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card Extraer PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/dividirPDF3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Extraer Pag PDF</h3>
-            <p class="card-text">Extrae una pag exacta de tu documento...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana5">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card Extraer Range PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/dividirPDF3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Extraer Rango Pag PDF</h3>
-            <p class="card-text">Extrae un rango de pags exacta de tu documento...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana6">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card tamaño hoja PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/dividirPDF3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title">Cambiar tamaño de hoja PDF</h3>
-            <p class="card-text">Cambiar el tamaño de un documento...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana7">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-3">
-        <!--Card rotar hoja PDFS-->
-        <div class="card ">
-          <img src="{% static 'img/dividirPDF3.jpg' %}" class="card-img-top" style="height:150px ; padding-top: 8px;">
-          <div class="card-body">
-            <h3 class="card-title"> rotar hoja PDF</h3>
-            <p class="card-text">rotar una hoja...</p>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ventana8">Ir a
-              la acción</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% include 'indexCartas.html' %}
 
-
-
-
-
-
-  <!--ventanas emergentes-->
   <!--ventana unir PDF-->
   <!-- Modal -->
   <div class="modal fade" id="ventana1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -126,78 +36,86 @@
         <div class="modal-body">
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#navArchivos" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Archivos</button>
-              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#navCarpeta" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Carpeta</button>
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#navArchivos"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">Archivos</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#navCarpeta"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Carpeta</button>
             </div>
           </nav>
           <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="navArchivos" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+            <div class="tab-pane fade show active" id="navArchivos" role="tabpanel" aria-labelledby="nav-home-tab"
+              tabindex="0">
 
-          <!-- parte el primer formulario para cortar -->
-          <br>
-          <P>Puedes agregar todos los documentos para que sean adjuntados en uno...</P>
-          <div id="info_form">
-            <!-- instanciamos el formulario -->
-            <form action="/unir_pdf/" enctype="multipart/form-data" method="post" id="form_data_unir">
-              {% csrf_token %}
-              <div class="input-group mb-3">
-                <input type="file" class="form-control" accept=".pdf" id="inputGroupFile02" multiple
-                  name="file_unir_pdf" required="required">
-              </div>
-                <div>
-                  {% if form.file_unir_pdf.errors %}
-                  <div class="alert alert-success" role="alert">{{ form.file_unir_pdf.errors}} </div>
-                  {% endif %}
-                </div> 
-              <button class="btn btn-danger" type="submit" form="form_data_unir">Enviar</button>
-            </form>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="navCarpeta" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-          <!-- parte el segundo formulario para cortar -->
-          <br>
-          <P>Puedes agregar una carpeta con pdfs...</P>
-          <div id="info_form">
-            <!-- instanciamos el formulario -->
-            <form action="/unir_carpeta_pdf/" enctype="multipart/form-data" method="post" id="form_carpeta_unir">
-              {% csrf_token %}
-              <div class="input-group mb-3">
-                <input type="file" class="form-control" accept=".pdf" id="inputGroupFile02" webkitdirectory directory
-                  multiple name="file_carpeta" required>
-              </div>
-              <div>
-                {% if form.file_carpeta.errors %}
-                <div class="alert alert-primary " role="alert">{{ form.file_carpeta.errors}}</div>
-                {% endif %}
-              </div>
-              <div><p>Ordenar los PDF por Nombre de Forma :</p><br>
-                <div class="container text-center">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="option1" value="option1"
-                    required>
-                  <label class="form-check-label" for="inlineRadio1">ASC</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="RadioOptions" id="option2" value="option2"
-                    required>
-                  <label class="form-check-label" for="inlineRadio2">DESC</label>
-                </div>
-              </div>
-              </div>
-              <div>
-                {% if form.RadioOptions.errors %}
-                <div class="alert alert-primary " role="alert">{{ form.RadioOptions.errors}}</div>
-                {% endif %}
-              </div>
+              <!-- parte el primer formulario para cortar -->
               <br>
-              <button class="btn btn-danger" type="submit" form="form_carpeta_unir">Enviar</button>
-            </form>
+              <P>Puedes agregar todos los documentos para que sean adjuntados en uno...</P>
+              <div id="info_form">
+                <!-- instanciamos el formulario -->
+                <form action="/unir_pdf/" enctype="multipart/form-data" method="post" id="form_data_unir"
+                  onsubmit="enviar_unir_pdf()">
+                  {% csrf_token %}
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" accept=".pdf" id="inputGroupFile01" multiple
+                      name="file_unir_pdf" required>
+                  </div>
+                  <div id="div_alert_1">
+                    {% if form.file_unir_pdf.errors %}
+                    <div class="alert alert-success" role="alert">{{ form.file_unir_pdf.errors}} </div>
+                    {% endif %}
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="navCarpeta" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+              <!-- parte el segundo formulario para cortar -->
+              <br>
+              <P>Puedes agregar una carpeta con pdfs...</P>
+              <div id="info_form">
+                <!-- instanciamos el formulario -->
+                <form action="/unir_carpeta_pdf/" enctype="multipart/form-data" method="post" id="form_carpeta_unir"
+                  onsubmit="enviar_carpeta_pdf()">
+                  {% csrf_token %}
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" accept=".pdf" id="inputGroupFile02" webkitdirectory
+                      directory multiple name="file_carpeta" required>
+                  </div>
+                  <div id="div_alert_2">
+                    {% if form.file_carpeta.errors %}
+                    <div class="alert alert-primary" role="alert">{{ form.file_carpeta.errors}}</div>
+                    {% endif %}
+                  </div>
+                  <div>
+                    <p>Ordenar los PDF por Nombre de Forma :</p><br>
+                    <div class="container text-center">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOptions" id="option1" value="option1"
+                          required>
+                        <label class="form-check-label" for="inlineRadio1">ASC</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOptions" id="option2" value="option2"
+                          required>
+                        <label class="form-check-label" for="inlineRadio2">DESC</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="div_alert_3">
+                    {% if form.RadioOptions.errors %}
+                    <div class="alert alert-primary" role="alert">{{ form.RadioOptions.errors}}</div>
+                    {% endif %}
+                  </div>
+                  <br>
+
+                </form>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
           <!-- parte el segundo formulario para cortar aca finaliza -->
         </div>
         <div class="modal-footer">
+          <button class="btn btn-danger" type="submit" form="form_data_unir" id="btn_unir_pdf">Enviar</button>
+          <button class="btn btn-danger" type="submit" form="form_carpeta_unir" id="btn_carpeta_pdf">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
             ata-bs-target="#staticBackdrop">Close</button>
         </div>
@@ -216,14 +134,16 @@
         </div>
         <div class="modal-body">
           <P>Agregar un documento podras dividir tu documento en la hoja que quieras...</P>
-          <form action="/dividir_pdf/" enctype="multipart/form-data" method="post" id="form_data_dividir">
+          <form action="/dividir_pdf/" enctype="multipart/form-data" method="post" id="form_data_dividir"
+            onsubmit="enviar_dividir()">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_dividir_pdf" required>
+              <input type="file" class="form-control" id="inputGroupFile03" accept=".pdf" name="file_dividir_pdf"
+                required>
             </div>
-            <div>
+            <div id="div_alert_4">
               {% if form.file_dividir_pdf.errors %}
-              <div class="alert alert-primary " role="alert">{{ form.file_dividir_pdf.errors}}</div>
+              <div class="alert alert-primary" role="alert">{{ form.file_dividir_pdf.errors}}</div>
               {% endif %}
             </div>
             <div class="input-group mb-3">
@@ -231,15 +151,16 @@
               <input type="number" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" min="1" name="numero_de_pag_pdf" required>
             </div>
-            <div>
+            <div id="div_alert_5">
               {% if form.numero_de_pag_pdf.errors %}
-              <div class="alert alert-primary " role="alert">{{ form.numero_de_pag_pdf.errors}}</div>
+              <div class="alert alert-primary" role="alert">{{ form.numero_de_pag_pdf.errors}}</div>
               {% endif %}
             </div>
-            <button  class="btn btn-danger" type="submit" form="form_data_dividir">Enviar</button>
+
           </form>
         </div>
         <div class="modal-footer">
+          <button class="btn btn-danger" type="submit" form="form_data_dividir" id="btn_dividir_pdf">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -249,59 +170,32 @@
   <!-- Modal -->
   <div class="modal fade" id="ventana3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Girar PDFs</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Girar y Ordena PDFs</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="limpiarCards()"
+            aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <P>Agregar tu documento y podras girar las hojas de manera vertical/horizontal cuanto quieras...</P>
-          <form action="/girar/" enctype="multipart/form-data" method="post" id="form_data_mostrar" >
-          {% csrf_token %}
-          <div class="input-group mb-3">
-            <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_mostrar_pdf" required>
-          </div>
-          <div>
-            {% if form.file_mostrar_pdf.errors %}
-            <div class="alert alert-primary" role="alert">{{ form.file_mostrar_pdf.errors}}</div>
-            {% endif %}
-          </div>
-          <button  class="btn btn-danger" type="submit" form="form_data_mostrar">Enviar</button>
-        </form>
-      </div>
-
-      <div class="container text-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            
-            {% for ver in img %}
-            <div draggable="true" ondragenter="dragenter(event)" ondragstart="dragstart(event)" id="contenedor_img_{{ver.id_img}}">
-              <div class="col mb-3" draggable="false" >
-                  <div class="card" draggable="false">
-                    <h5>{{ver.id_img}}</h5 >
-                    <div draggable="false">
-                    <img draggable="false" id="contenedor_img_{{ver.id_img}}" src=" data:image/jpeg;charset=utf-8;base64,{{ver.imagen}}" class="card-img-top" width="50" height="150" >
-                  </div>
-                    <div draggable="false">
-                      <button  draggable="false" class="btn btn-warning" value="Rotate" onclick="Girar('contenedor_img_{{ver.id_img}}')"><img draggable="false" src="{% static 'img/descarga_rotar.png' %}"></button>
-                      <button draggable="false" class="btn btn-danger"><img draggable="false" src="{% static 'img/descarga_eliminar.png' %}"></button>
-                    </div>
-                  </div>
-                </div>
-             </div>
-        {% endfor %}
+          <form action="/girar/?uui7890hjkl" enctype="multipart/form-data" method="post" id="form_data_mostrar">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="inputGroupFile04" accept=".pdf" name="file_mostrar_pdf"
+                required>
+            </div>
+            <div id="div_alert_6">
+              {% if form.file_mostrar_pdf.errors %}
+              <div class="alert alert-primary" role="alert">{{ form.file_mostrar_pdf.errors}}</div>
+              {% endif %}
+            </div>
+          </form>
         </div>
-      </div>
-      <div id="divSource"></div>
-   
-
-     
-
-
-        
         <div class="modal-footer">
-          <button class="btn btn-danger">Enviar</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-danger" type="submit" form="form_data_mostrar" id="btn_form_pdf">Enviar</button>
+          <button type="button" class="btn btn-secondary" onclick="limpiarCards()"
+            data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -310,7 +204,7 @@
   <!-- Modal -->
   <div class="modal fade" id="ventana4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Montar PDFs</h1>
@@ -318,11 +212,20 @@
         </div>
         <div class="modal-body">
           <P>Agrega tu documento y podras montar un hoja sobre otra para rellenar documento más rapido...</P>
-          <div class="input-group mb-3">
-            <input type="file" class="form-control" id="entregar_file" multiple>
-          </div>
+          <form action="/montar_hoja/" id="form_montar" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <label for="basic-url" class="form-label text-align">Ingresa tu documento</label>
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="montar_file" name="montar_file" required>
+            </div>
+            <label for="basic-url" class="form-label text-align">Ingresa tu documento N°2</label>
+            <div class="input-group mb-3">
+              <input type="file" class="form-control" id="montar_file2" name="montar_file2" required>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" form="form_montar">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -340,30 +243,30 @@
         </div>
         <div class="modal-body">
           <P>Agrega tu documento y Extrae una pag exacta de el ....</P>
-          <form action="/extraer_pdf/" enctype="multipart/form-data" method="post" id="form_data_extraer">
+          <form action="/extraer_pdf/" enctype="multipart/form-data" method="post" id="form_data_extraer"
+            onsubmit="enviar_extraer_hoja()">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_extraer_pdf" required>
-            </div>
-            <div>
-              {% if form.file_extraer_pdf.errors %}
-              <div class="alert alert-primary " role="alert">{{ form.file_extraer_pdf.errors}}</div>
-              {% endif %}
+              <input type="file" class="form-control" id="inputGroupFile06" accept=".pdf" name="file_extraer_pdf"
+                required>
             </div>
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">Numero de la PAG</span>
               <input type="number" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" min="1" name="numero_pag" required>
             </div>
-            <div>
+            <div id="div_alerta_7">
+              {% if form.file_extraer_pdf.errors %}
+              <div class="alert alert-primary" role="alert">{{ form.file_extraer_pdf.errors}}</div>
+              {% endif %}
               {% if form.numero_pag.errors %}
-              <div class="alert alert-primary " role="alert">{{ form.numero_pag.errors}}</div>
+              <div class="alert alert-primary" role="alert">{{ form.numero_pag.errors}}</div>
               {% endif %}
             </div>
-            <button class="btn btn-danger" type="submit" form="form_data_extraer">Enviar</button>
           </form>
         </div>
         <div class="modal-footer">
+          <button class="btn btn-danger" type="submit" form="form_data_extraer">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -381,10 +284,12 @@
         </div>
         <div class="modal-body">
           <P>Agrega tu documento y Extrae una cantidad de paginas de el ....</P>
-          <form action="/extraer_pdf_range/" enctype="multipart/form-data" method="post" id="form_data_extraer_range">
+          <form action="/extraer_pdf_range/" enctype="multipart/form-data" method="post" id="form_data_extraer_range"
+            onsubmit="enviar_extraer_rango()">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_extraer_pdf_range" required>
+              <input type="file" class="form-control" id="inputGroupFile07" accept=".pdf" name="file_extraer_pdf_range"
+                required>
             </div>
             <div>
               {% if form.file_extraer_pdf_range.errors %}
@@ -399,7 +304,7 @@
               <input type="number" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default" min="1" name="numero_pag_final" required>
             </div>
-            <div>
+            <div id="div_alert_8">
               {% if form.numero_pag_inicio.errors %}
               <div class="alert alert-primary " role="alert">{{ form.numero_pag_inicio.errors}}</div>
               {% endif %}
@@ -407,11 +312,11 @@
               <div class="alert alert-primary " role="alert">{{ form.numero_pag_final.errors}}</div>
               {% endif %}
             </div>
-            
-            <button  class="btn btn-danger" type="submit" form="form_data_extraer_range">Enviar</button>
+
           </form>
         </div>
         <div class="modal-footer">
+          <button class="btn btn-danger" type="submit" form="form_data_extraer_range">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -432,95 +337,390 @@
           <form action="/Cambiar_tamano/" enctype="multipart/form-data" method="post" id="form_cambiar_tamano">
             {% csrf_token %}
             <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_cambiar_tamano">
+              <input type="file" class="form-control" id="inputGroupFile08" accept=".pdf" name="file_cambiar_tamano" required>
             </div>
-            <div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Check_carta" value="option1">
-                <label class="form-check-label" for="inlineRadio1">Carta</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Check_A4" value="option2">
-                <label class="form-check-label" for="inlineRadio2">A4</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Check_Oficio"
-                  value="option3">
-                <label class="form-check-label" for="inlineRadio3">Oficio</label>
-              </div>
-            </div>
-            <div class="text">
-
-            </div>
-            <button type="submit" form="form_cambiar_tamano">Enviar</button>
+            
           </form>
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" form="form_cambiar_tamano">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-  <!--ventana Tamaño hoja PDF-->
+  
+  <!--ventana lista de hojas a mostrar -->
   <!-- Modal -->
-  <div class="modal fade" id="ventana8" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <div class="modal fade" id="ventanaAmostrar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Tamaño de la hoja PDF</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Girar PDFs</h1>
+          <button type="submit" class="btn-close" form="deletepdf" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Ordena tu PDF a gusto....</h3>
+
+
+          <div draggable="false" class="container text-center">
+            <div draggable="false" class="disable-selection" ondragenter="dragenter(event)"
+              ondragstart="dragstart(event)">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5" name="listaHojas" id="sortable">
+                {% for ver in img %}
+                <div class="bandera" draggable="true" id="div_{{ver.id_img}}" data-mdb-container="#sortable">
+                  <div class="bandera2" id="{{ver.id_img}}" draggable="false">
+                    <div class="col mb-3" draggable="false">
+                      <div class="card" draggable="false" style="width: auto; ">
+                        <div class="container text-center">
+                          <div class="row">
+                            <div class="col-sm-8 text-align"><label class="fs-5" id="titulo_{{ver.id_img}}"></label>
+                            </div>
+                            <div class="col-sm-4" style="
+                            padding-top: 3px;"><label id="grados_{{ver.id_img}}" style="
+                              background-color: #28bc58bf;
+                              border-radius: 4px;
+                              padding: 0px 4px;
+                          ">0°</label></div>
+                          </div>
+                        </div>
+                        <div draggable="false" id="caja_img_{{ver.id_img}}" style="width: auto; text-align: center;">
+                          <img draggable="false" id="contenedor_img_{{ver.id_img}}"
+                            src=" data:image/jpeg;charset=utf-8;base64,{{ver.imagen}}" data_rotate="0" contador="1"
+                            class="img card-img-top caja">
+                          <input type="hidden" id="volteado_{{ver.id_img}}" value="0"></input>
+                          <input type="hidden" id="estado_file_{{ver.id_img}}" value="0"></input>
+                        </div>
+                        <div draggable="false">
+                          <button draggable="false" class="btn btn-warning" id="btn_{{ver.id_img}}"
+                            onclick="Girar('contenedor_img_{{ver.id_img}}', 'volteado_{{ver.id_img}}','estado_file_{{ver.id_img}}', 'grados_{{ver.id_img}}')"><img
+                              draggable="false" src="{% static 'img/descarga_rotar.png' %}"></button>
+
+                          <button draggable="false" value="0" class="btn btn-danger"
+                            onclick="eliminar('div_{{ver.id_img}}')"><img draggable="false"
+                              src="{% static 'img/descarga_eliminar.png' %}"></button>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="divSource"></div>
+        <div class="modal-footer">
+          <form action="/salidaDoc/" method="POST" id="enviar_json">
+            {% csrf_token %}
+            {% if ruta_doc%}
+            <input type="hidden" id="ruta_doc" name="ruta_doc" value="{{ruta_doc}}"></input>
+            {%endif%}
+            <input type="hidden" id="listaOrden" name="lista_json" value="2"></input>
+          </form>
+          <button class="btn btn-danger" type="button" onclick="lectorOrden()" form="enviar_json"
+            id="orden_pdf">Enviar</button>
+          <form action="/deletepdf/" method="post" id="deletepdf">
+            {% csrf_token %}
+            {% if ruta_doc%}
+            <input type="hidden" id="ruta_doc" name="ruta_doc" value="{{ruta_doc}}"></input>
+            {%endif%}
+            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--ventana montar --ventana grande-- PDF-->
+  <!-- Modal -->
+  <div class="modal fade" id="ventanaAmostrarMontar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Montar PDFs</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <P>rotar ....</P>
-          <form action="/Rotar_hoja/" enctype="multipart/form-data" method="post" id="form_rotar_pag">
-            {% csrf_token %}
-            <div class="input-group mb-3">
-              <input type="file" class="form-control" id="inputGroupFile02" accept=".pdf" name="file_rotar">
-            </div>
-            <div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">N° de la hoja</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default" min="1" name="numero_pag_rotate">
+          <h5>Vista Previa...</h5>
+          <div class="container text-center">
+            <div class="row justify-content-md-center">
+              <div class="col-7">
+                <div class="container text-center" style="position: relative; top: 0px; left: 0px;">
+                  <div class="row justify-content-md-center">
+                    {% for montar in lista_img %}
+                    <img id="montador_img_1"
+                        src=" data:image/jpeg;charset=utf-8;base64,{{montar.imagen}}" 
+                        class="montar-img" style="position: absolute;">
+                    {% endfor %}
+                    {% for montar2 in lista_img2 %}
+                    <img id="montador_img_2"
+                        src=" data:image/jpeg;charset=utf-8;base64,{{montar2.imagen2}}" 
+                        class="montar-img" >
+                    {% endfor %}
+                  </div>
+                </div>
               </div>
-              <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">N° de escalado</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default" name="escaladoxy"  placeholder="1.0" step="0.01">
-                <span class="input-group-text" id="inputGroup-sizing-default">eje X</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default" name="ejex">
-                <span class="input-group-text" id="inputGroup-sizing-default">eje Y</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default" name="ejexy">
-              </div>
-            </div>
+              <div class="col-auto">
+                <form action="/montar_salida/" method="post" enctype="multipart/form-data" id="posicion_ejes">
+                  {% csrf_token %}
+                  <div class="container text-center">
+                    <div class="row justify-content-md-center">
+                      <div><label>Izquierda/Derecha</label>
+                        <div class="input-group mb-3">
+                          <button type="button" class="btn btn-warning" id="btn_eje_x_left" value="-1"><img
+                              src="{% static 'img/left-24.png' %}"></button>
+                          <input type="number" class="form-control" id="montar_eje_X" value="0" onclick="myFunction()" name="montar_eje_X"></input>
+                          <button type="button" class="btn btn-warning" id="btn_eje_x_right" value="1"><img
+                              src="{% static 'img/right-24.png' %}"></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row justify-content-md-center">
+                      <div><label>Arriba/Abajo</label>
+                        <div class="input-group mb-3">
+                          <button type="button" class="btn btn-warning" id="btn_eje_y_up" value="-1"><img
+                              src="{% static 'img/up-24.png' %}"></button>
+                          <input type="number" class="form-control" id="montar_eje_Y" min="-301" max="305" value="0" onclick="myFunction()" name="montar_eje_Y"></input>
+                          <button type="button" class="btn btn-warning" id="btn_eje_y_down" value="1"><img
+                              src="{% static 'img/down-24.png' %}"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container text-center">
+                    <div class="row" style="margin-top: 20px;">
+                      <div class="col">
+                        {% for montar in lista_img %}
+                        <div>
+                          <h5>Doc-1</h5><img id="montador_img{{montar.id_img}}"
+                            src=" data:image/jpeg;charset=utf-8;base64,{{montar.imagen}}" class="card-img-top">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <div class="col">
+                        {% for montar2 in lista_img2 %}
+                        <div>
+                          <h5>Doc-2</h5><img id="montador_img{{montar2.id_img2}}"
+                            src=" data:image/jpeg;charset=utf-8;base64,{{montar2.imagen2}}" class="card-img-top">
+                        </div>
+                        {% endfor %}
+                        <br>
+                      </div>
+                    </div>
+                  </div>
 
-            <div class="text">
-              {%if ventana7 %}
-              {%if messages %}
-              {%for msg in messages%}
-              <b>{{msg}}</b>
-              <script>
-                $(document).ready(function () {
-                  const myModal = new bootstrap.Modal('#ventana7')
-                  myModal.show()
-                });
-              </script>
-              {%endfor%}
-              {%endif%}
-              {%endif%}
+                  {% if ruta_doc1 %}
+                  <input type="hidden" value="{{ruta_doc1}}" id="ruta_doc1" name="ruta_doc1"></input>
+                  {%endif%}
+                  {% if ruta_doc2 %}
+                  <input type="hidden" value="{{ruta_doc2}}" id="ruta_doc2" name="ruta_doc2"></input>
+                  {%endif%}
+                  <input type="hidden" value="0" id="cifra_y" name="cifra_y"></input>
+                  <input type="hidden" value="0" id="cifra_x" name="cifra_x"></input>
+                </form>
+              </div>
             </div>
-            <button type="submit" form="form_rotar_pag">Enviar</button>
-          </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-danger" form="posicion_ejes">Enviar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ventana Cambiar tamaño --ventana grande--  -->
+  <!-- Modal -->
+  <div class="modal fade" id="ventanaAmostrarCambiarTamano" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Ventana Cambiar tamaño PDFs</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Vista Previa...</h5>
+        <div class="container text-center" style="margin-top: 20px;">
+          <div class="row justify-content-md-center">
+            <div class="col-7">
+              <div class="container text-center">
+                <div class="row justify-content-md-center">
+                  {% for montar in lista_img %}
+                  <img id="montador_img_1"
+                      src=" data:image/jpeg;charset=utf-8;base64,{{montar.imagen}}" 
+                      class="montar-img" style="position: absolute;">
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="col-auto" style="height: 600px; padding-top: 30px;">
+              <form action="/cambiarTamano_salida/" method="post" enctype="multipart/form-data" id="dimencion_hoja">
+                {% csrf_token %}
+                <div class="container text-center">
+                  <div class="row justify-content-md-center">
+                    <div><label>Anchura/width</label>
+                      <div class="input-group mb-3">
+                        <button type="button" class="btn btn-warning" id="btn_altura" ><img
+                            src="{% static 'img/cambiosize.png' %}" style="height: 30px;"></button>
+                        <input type="number" class="form-control" id="dato_ancho" min="0" name="dato_ancho" required></input>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-md-center">
+                    <div><label>Altura/height</label>
+                      <div class="input-group mb-3">
+                        <button type="button" class="btn btn-warning" id="btn_anchura" value="0"><img
+                            src="{% static 'img/cambiosize.png' %}" style="height: 30px; transform: rotate(90deg);"></button>
+                        <input type="number" class="form-control" id="dato_alto" min="0" max="400" name="dato_alto" required></input>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container text-start" style="margin-top: 20px;">
+                  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dato" id="check_1" value="oficio">
+                      <label class="form-check-label" for="flexRadioDefault1" >
+                        Oficio = 216 x 356 mm
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dato" id="check_2" value="carta" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Carta =	216 x 279 mm
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dato" id="check_3" value="a4" checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        A4 = 210 x 297 mm
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="dato" id="check_4" value="sindato"checked>
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Custom
+                      </label>
+                    </div>
+                    <div class="container" style="margin-top: 20px;">
+                      <label for="">El documento contiene el siguente formato de hoja : </label>
+                  </div>
+                  <div class="container" style="margin-top: 20px; width: 400px;">
+                    {%if resultado_size%}
+                      <div class="alert alert-success" role="alert">{{resultado_size}}</div>
+                      {%endif%}
+                    </div>
+                </div>
+                {% if ruta_doc1 %}
+                <input type="hidden" value="{{ruta_doc1}}" id="ruta_doc1" name="ruta_doc1"></input>
+                {%endif%}
+                
+              </form>
+            </div>
+          </div>
+        </div>
+
         <div class="modal-footer">
+          <button type="submit" class="btn btn-danger" form="dimencion_hoja">Enviar</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+  <!-- Controlador de movimiento monatando hoja -->
+  <script>
+
+    $('#btn_eje_y_up').click(function () {
+      var btn_y_up = document.getElementById('btn_eje_y_up').value;
+      var numero = document.getElementById("montar_eje_Y");
+      numero.value = parseInt(numero.value) + parseInt(btn_y_up);
+      myFunction();
+    });
+    $('#btn_eje_y_down').click(function () {
+      var btn_y_down = document.getElementById('btn_eje_y_down').value;
+      var numero = document.getElementById("montar_eje_Y");
+      numero.value = parseInt(numero.value) + parseInt(btn_y_down);
+      myFunction();
+    });
+    $('#btn_eje_x_left').click(function () {
+      var btn_x_left = document.getElementById('btn_eje_x_left').value;
+      var numero2 = document.getElementById("montar_eje_X");
+      numero2.value = parseInt(numero2.value) + parseInt(btn_x_left);
+      myFunction();
+    });
+    $('#btn_eje_x_right').click(function () {
+      var btn_x_right = document.getElementById('btn_eje_x_right').value;
+      var numero2 = document.getElementById("montar_eje_X");
+      numero2.value = parseInt(numero2.value) + parseInt(btn_x_right);
+      myFunction();
+    });
+
+    function myFunction() {
+
+      var numero = document.getElementById("montar_eje_Y").value;
+      var numero2 = document.getElementById("montar_eje_X").value;
+      var el = document.getElementById("montador_img_2");
+      
+      var alto = ((parseInt(numero)*100)/el.clientHeight);
+      var ancho = ((parseInt(numero2)*100)/el.clientWidth);
+      document.getElementById("cifra_x").value = ancho;
+      document.getElementById("cifra_y").value = alto;
+      
+      
+      el.setAttribute("style", "position: relative; top:" + parseInt(numero) + "px; left:" + parseInt(numero2) + "px;");
+    }
+  </script>
+
+
+  <!-- modal alerta archivo no existe -->
+  <div class="modal fade bd-example-modal-sm" id="venntanaAlerta" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Hoo...!</h4>
+            <p>Ocurrió un error ..</p>
+            <p>Vuelve a subir tu archivo...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- modal alerta archivo no existe -->
+ <div class="modal fade bd-example-modal-sm" id="venntanaAlerta" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+   <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+       
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
 
@@ -529,132 +729,183 @@
   <!-- ver el estado de envio envio-sin error y error -->
   <!-- agregar los javas al final para que cargen despues de las vistas-->
   <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
 
-<!-- preguntamos sobre los error y que venta se ira -->
-<!-- ventana1 -->
-{% if ventana1 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana1');
-    myModal.show();
-  });
-</script>
-{%endif%}
-{% if navCarpeta %}
-<script>
- $(document).ready(function () { 
-   const bsTab = new bootstrap.Tab('#navCarpeta');
-   bsTab.show();});
-</script>
-{%endif%}
-<!-- ventana2 -->
-{%if ventana2 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana2')
-    myModal.show()
-  });
-</script>
-{%endif%}
 
-<!-- ventana3 -->
-{%if ventana3 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana3')
-    myModal.show()
-  });
+  <!-- preguntamos sobre los error y que venta se ira -->
+  <!-- ventana1 -->
 
-</script>
-{%endif%}
-
-<!-- ventana4 -->
-{%if ventana4 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana4')
-    myModal.show()
-  });
-</script>
-{%endif%}
-<!-- ventana5 -->
-{%if ventana5 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana5')
-    myModal.show()
-  });
-</script>
-{%endif%}
-<!-- ventana6 -->
-{%if ventana6 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana6')
-    myModal.show()
-  });
-</script>
-{%endif%}
-<!-- ventana7 -->
-{%if ventana7 %}
-<script>
-  $(document).ready(function () {
-    const myModal = new bootstrap.Modal('#ventana7')
-    myModal.show()
-  });
-</script>
-{%endif%}
-<!-- ventana8 -->
-  {%if ventana8 %}
+  {%if ventanaAmostrarMontar%}
   <script>
     $(document).ready(function () {
-      const myModal = new bootstrap.Modal('#ventana8')
+      const myModal = new bootstrap.Modal('#ventanaAmostrarMontar');
+      myModal.show();
+    });
+  </script>
+  {%endif%}
+  {% if venntanaAlerta %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#venntanaAlerta');
+      myModal.show();
+    });
+  </script>
+  {%endif%}
+  {% if ventana1 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana1');
+      myModal.show();
+    });
+  </script>
+  {%endif%}
+  {% if navCarpeta %}
+  <script>
+    $(document).ready(function () {
+      const bsTab = new bootstrap.Tab('#nav-profile-tab');
+      bsTab.show();
+    });
+  </script>
+  {%endif%}
+  <!-- ventana2 -->
+  {%if ventana2 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana2')
+      myModal.show()
+    });
+  </script>
+  {%endif%}
+
+  <!-- ventana3 -->
+  {%if ventana3 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana3')
+      myModal.show()
+    });
+
+  </script>
+  {%endif%}
+
+  <!-- ventana4 -->
+  {%if ventana4 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana4')
+      myModal.show()
+    });
+  </script>
+  {%endif%}
+  <!-- ventana5 -->
+  {%if ventana5 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana5')
+      myModal.show()
+    });
+  </script>
+  {%endif%}
+  <!-- ventana6 -->
+  {%if ventana6 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana6')
+      myModal.show()
+    });
+  </script>
+  {%endif%}
+  <!-- ventana7 -->
+  {%if ventana7 %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventana7')
       myModal.show()
     });
   </script>
   {%endif%}
   
 
-<script>
-function Girar(div_girar) {
-  document.querySelector('#'+div_girar).style.transform = 'rotate(90deg)', 'width:"150"','height:"50"';
-}
-</script>
+  {% if ventanaAmostrarCambiarTamano %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventanaAmostrarCambiarTamano')
+      myModal.show()
+    });
+  </script>
+  {% endif %}
 
-<script>
-var source;
-function isbefore(a, b) {
-    if (a.parentNode == b.parentNode) {
-        for (var cur = a; cur; cur = cur.previousSibling) {
-            if (cur === b) {
-                return true;
-            }
+  {%if ventanaAmostrar %}
+  <script>
+    $(document).ready(function () {
+      const myModal = new bootstrap.Modal('#ventanaAmostrar')
+      myModal.show();
+
+      setTimeout(function () {
+        var alto_max = 0;
+        var ancho_max = 0;
+        var cajas_img = document.getElementsByClassName("caja");
+
+        for (var i = 0; i < cajas_img.length; i++) {
+          numero = parseInt([i]) + 1;
+          document.getElementById('titulo_' + [i]).innerHTML = "N°- " + numero;
+          var ancho = cajas_img[i].clientWidth;
+          var alto = cajas_img[i].clientHeight;
+          if (alto > alto_max) { alto_max = alto; }
+          if (ancho > ancho_max) { ancho_max = ancho; }
+          if (ancho > alto) {
+            document.getElementById('volteado_' + [i]).value = 1;
+          }
         }
-    }
-    return false;
-}
+        if (ancho_max > alto_max) {
+          console.log("estoy aca Todas volteada")
+          alto_max = 220;
+          for (var i = 0; i < cajas_img.length; i++) {
+            elem = document.getElementById('caja_img_' + [i]);
+            elem.style.height = alto_max + 'px';
+            document.getElementById('estado_file_' + [i]).value = 1;
+          }
+        } else {
+          console.log("estoy aca algunas volteadas o ninguna")
+          alto_max = alto_max + 20;
+          for (var i = 0; i < cajas_img.length; i++) {
+            elem = document.getElementById('caja_img_' + [i]);
+            elem.style.height = alto_max + 'px';
+          }
+        }
 
-function dragenter(e) {
-    var targetelem = e.target;
-    if (targetelem.nodeName == "DIV") {
-       targetelem = targetelem.parentNode;   
-    }  
 
-    if (isbefore(source, targetelem)) {
-        targetelem.parentNode.insertBefore(source, targetelem);
-    } else {
-        targetelem.parentNode.insertBefore(source, targetelem.nextSibling);
-    }
-}
 
-function dragstart(e) {
-    source = e.target;
-    e.dataTransfer.effectAllowed = 'move';
+      }, 200);
+
+
+    });
+  </script>
+  {%endif%}
+
+  <script>
+
+$("input").change(function(){
+
+resultado= $("input:checked").val()
+
+if(resultado == "oficio"){
+    $("#dato_ancho").val("216");
+    document.getElementById("dato_alto").value = "356";
 }
-</script>
+if(resultado == "carta"){
+    $("#dato_ancho").val("216");
+    document.getElementById("dato_alto").value = "279";
+}
+if(resultado == "a4"){
+    $("#dato_ancho").val("210");
+    document.getElementById("dato_alto").value = "297";
+}
+if(resultado == "sindato"){}
+});
+  </script>
+
+
+
 
 
 </body>

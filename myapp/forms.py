@@ -39,7 +39,7 @@ class valirdar_carpeta_pdf(forms.Form):
             contador= contador + total_pag
         print(len(docs))
         if len(docs)<3:
-            raise ValidationError("Se solicitan como mínimo 3 documentos dentro de la carpeta")
+            raise ValidationError("Se solicitan como mínimo 3 Doc en la carpeta")
         if len(docs)>50:
             raise ValidationError("La cantidad maxima de docs por carpeta son 50")
         if contador> 1000 :
@@ -185,3 +185,31 @@ class validar_file_mostrar(forms.Form):
         if total_pag>1000:
             raise ValidationError("Tu doc tienen :"+str(total_pag)+" y el max de pág es 1000 ")
         return docs
+
+
+class validar_json(forms.Form):
+    lista_json = forms.CharField(required=True)
+    ruta_doc = forms.CharField(required=True)
+
+class validar_delete(forms.Form):
+    ruta_doc = forms.CharField()
+
+class validar_montar_hojas(forms.Form):
+
+    montar_file= forms.FileField(widget=forms.ClearableFileInput(), required=True)
+    montar_file2= forms.FileField(widget=forms.ClearableFileInput(), required=True)
+
+class validar_montar_salida_hojas(forms.Form):
+    montar_eje_Y= forms.CharField(required=True)
+    montar_eje_X= forms.CharField(required=True)
+    ruta_doc1= forms.CharField(widget=forms.ClearableFileInput(), required=True)
+    ruta_doc2= forms.CharField(widget=forms.ClearableFileInput(), required=True)
+    cifra_x= forms.CharField(required=True)
+    cifra_y= forms.CharField(required=True)
+
+
+class validar_cambiar_size(forms.Form):
+    ruta_doc1= forms.CharField(widget=forms.ClearableFileInput(), required=True)
+    dato_alto= forms.CharField(required=True)
+    dato_ancho= forms.CharField(required=True)
+
